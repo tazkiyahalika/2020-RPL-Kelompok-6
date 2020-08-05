@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\infraction;
+// use App\infraction;
+//Nama Model Kamu Infraction bukan infraction
+// Nama file Controller kamu Typo, sudah saya betulkan
+use App\Infraction;
 
 class InfractionController extends Controller
 {
@@ -14,8 +17,10 @@ class InfractionController extends Controller
 
      public function save(Request $request)
     {
- 	$infraction = new infraction;
- 	$infraction ->name  = $request->input('name infraction');
+	 $infraction = new Infraction;
+	 // $infraction ->name  = $request->input('name infraction');
+	 //gak ada field name di table infractions kamu
+	$infraction ->name_infraction  = $request->input('name_infraction');
  	$infraction ->point = $request->input('point');
  	$infraction ->save();
  	return redirect('/infraction');

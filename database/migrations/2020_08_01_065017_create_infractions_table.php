@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInfractionTable extends Migration
+class CreateInfractionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateInfractionTable extends Migration
      */
     public function up()
     {
-        Schema::create('infraction', function (Blueprint $table) {
+        // Schema::create('infraction', function (Blueprint $table) {
+        //nama table itu harus PLURAL
+        Schema::create('infractions', function (Blueprint $table) {
             $table->id();
-            $table->string('name infraction');
+            // $table->string('name infraction');
+            // kamu ngikutin tutorialnya siapa? kenapa  bikin nama fieldnya pake spasi?
+            $table->string('name_infraction');
             $table->integer('point');
             $table->timestamps();
         });
