@@ -14,12 +14,11 @@ class InfractionTableSeeder extends Seeder
     {
     	
 
-    		DB::table('infraction')->insert([
-        	'name_infraction' => Str::random(10), 
-        	'point'			  => Int::random(10),
+    	DB::table('infractions')->insert([
+        'name_infraction' =>'black socks', 
+        'point'			  =>'10',
 
         ]);
     	        
     }
-}
 }

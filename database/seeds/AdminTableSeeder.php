@@ -12,9 +12,9 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
        
-    		DB::table('admin')->insert([
-        	'name'   =>  Str::random(10),
-        	'gender' =>  Str::random(10),
+    	DB::table('admins')->insert([
+        'name'   =>'Ana',
+        'gender' =>'girls',
 
         ]);
     	        
@@ -22,4 +22,4 @@ class AdminTableSeeder extends Seeder
 
     }
 
-}
+

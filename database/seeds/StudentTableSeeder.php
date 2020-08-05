@@ -12,14 +12,16 @@ class StudentTableSeeder extends Seeder
     public function run()
     {
         
+    	DB::table('students')->insert([
+        'name'      =>'alika',
+        'class'     =>'12',
+        'derection' =>'rpl', 
+        'gender'    =>'ciwi',
+        'point'	    =>'12',
 
-    		DB::table('student')->insert([
-        	'name'    => Str::make('alika'),
-        	'class'   => Int::make('12'),
-        	'derection' => Str::make('rpl') 
-        	'gender'  => Str::make('ciwi'),
-        	'point'	  => Int::make('12'),
         ]);
     	        
-    }    }
+    }    
+
 }
+
