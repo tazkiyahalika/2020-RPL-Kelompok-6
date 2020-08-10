@@ -13,8 +13,10 @@ class InfractionController extends Controller
 {
     public function index()
     {
+        $infraction = DB::table('infractions')->get();
     	return view('infraction');
     }
+
 
      public function save(Request $request)
     {
