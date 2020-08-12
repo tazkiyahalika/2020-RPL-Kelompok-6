@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Combinasi;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 // use App\infraction;
 //Nama Model Kamu Infraction bukan infraction
 // Nama file Controller kamu Typo, sudah saya betulkan
@@ -13,8 +14,14 @@ class InfractionController extends Controller
 {
     public function index()
     {
-        $infraction = DB::table('infractions')->get();
-    	return view('infraction');
+       // $infraction = DB::table('infractions')->get();
+    	//return view('infraction');
+
+    	// mengambil data dari table infraction
+    	$infraction = DB::table('infractions')->get();
+ 
+    	// mengirim data infraction ke view index
+    	return view('index',['infraction' => $infraction]);
     }
 
 
@@ -30,5 +37,25 @@ class InfractionController extends Controller
 
 	}
 
+	public function create()
+	{
+		return view('create-infraction');
+	}
+
+	public function store(Request $request)
+	{
+		$this->validate($request,[
+			'name_infraction' => 'required',
+			'point'			  => 'required',
+
+		]);
+
+			DB::table('infractions')->insert([
+			'name_infraction' => $request ->input('name_infraction'),
+			'point'			  => $request ->input('point')
+		]);
+
+		return redirect('/infraction');
+	}
    
 }

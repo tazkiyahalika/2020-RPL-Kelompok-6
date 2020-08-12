@@ -62,3 +62,5 @@ Route::post('/infraction', 'Combinasi\InfractionController@save');
 //masukan pada controller yang nantinya tersimpan di database.
 
 //ketentuan : dalam projek ini belum menggunakan middleware karema kita belum membuat form login dan register.
+
+Route::get('/infraction/create', 'Combinasi\InfractionController@create');
