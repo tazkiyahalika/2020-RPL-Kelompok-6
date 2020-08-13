@@ -39,11 +39,10 @@ class InfractionController extends Controller
 		return view('create-infraction');
 	}
 
-
 	public function store(Request $request)
 	{
 		//insert data ke table infraction
-			DB::table('infractions') ->insert([
+			DB::table('infractions')->insert([
 			'name_infraction' => $request -> input('name_infraction'),
 			'point'			  => $request -> input('point')
 		]);
@@ -53,20 +52,31 @@ class InfractionController extends Controller
 
 	public function edit($id)
 	{
-		$infraction = DB::table('infractions') -> where($id) -> get(); 	//mengambil data infraction berdasarkan id yang dipilih
-		return view('edit',['infraction' => $infraction]);			//passing data infraction yang didapat ke view edit-infraction.blade.php
+		$infraction = DB::table('infractions')-> where('id', $id) -> get(); 	//mengambil data infraction berdasarkan id yang dipilih
+		return view('edit-infraction',['infraction' => $infraction]);			//passing data infraction yang didapat ke view edit-infraction.blade.php
+		//return view('edit-infraction',{infraction/{$id}/edit});
+
 	}
 
 	public function update(Request $request)
 	{
-		DB::table('infractions') -> where('id',$request->id) -> update([
-			'name_infraction' => $request -> input('name_infraction'),
-			'point'			  => $request -> input('point')
+		DB::table('infractions')-> where('id',$request->id) -> update([
+			'name_infraction' => $request ->name_infraction,
+			'point'			  => $request ->point
 		]);	
 
 		return redirect('/infraction');	
 	}
    
+   // method untuk hapus data infraction
+	public function hapus($id)
+	{
+	// menghapus data infraction berdasarkan id yang dipilih
+	DB::table('infractions')->where('id',$id)->delete();
+		
+	// alihkan halaman ke halaman infraction
+	return redirect('/infraction');
+	}
 
 
 }

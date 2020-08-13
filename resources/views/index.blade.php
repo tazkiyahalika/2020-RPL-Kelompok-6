@@ -7,7 +7,7 @@
  
 	<h3>Data Pelanggaran</h3>
  
-	<a href="/infraction/tambah"> + Tambah Pegawai Baru</a>
+	<a href="/infraction/add">+  Add New Infraction</a>
 	
 	
 	<br/>

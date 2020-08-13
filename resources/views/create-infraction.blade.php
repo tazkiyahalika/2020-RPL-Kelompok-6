@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah</title>
+	<title>Add</title>
 </head>
 <body>
-	<center><h1>Tambah Data Pelanggaran</h1></center> 
+	<center><h1>Add Infraction Data</h1></center> 
 	<form action="/infraction/store" method="post">
 		@csrf
 		<table style="height: 100px">
