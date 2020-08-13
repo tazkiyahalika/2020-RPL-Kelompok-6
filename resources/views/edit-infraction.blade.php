@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah</title>
+	<title>Edit</title>
 </head>
 <body>
-	<center><h1>Tambah Data Pelanggaran</h1></center> 
-	<form action="/infraction/store" method="post">
-		@csrf
-		<table style="height: 100px">
+	<center><h1>Edit Data Pelanggaran</h1></center> 
+
+	<a href="/infraction">Kembali</a> 
+
+	<br/>
+	<br/> 
+
+	@foreach($infraction as $i)
+
+	<form action="/infraction/update" method="post">
+		{{ csrf_field() }}
+		
 			<tr>
 				<td>Name infraction</td>
 				<td>:</td>
@@ -29,6 +37,7 @@
 		</tr>
 		</table>
 	</form>
+	@endforeach
 
 </body>
 </html>

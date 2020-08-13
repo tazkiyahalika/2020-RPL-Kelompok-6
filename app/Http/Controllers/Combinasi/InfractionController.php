@@ -17,11 +17,8 @@ class InfractionController extends Controller
        // $infraction = DB::table('infractions')->get();
     	//return view('infraction');
 
-    	// mengambil data dari table infraction
-    	$infraction = DB::table('infractions')->get();
- 
-    	// mengirim data infraction ke view index
-    	return view('index',['infraction' => $infraction]);
+    	$infraction = DB::table('infractions')->get();		// mengambil data dari table infraction
+    	return view('index',['infraction' => $infraction]);	// mengirim data infraction ke view index
     }
 
 
@@ -30,32 +27,46 @@ class InfractionController extends Controller
 	 $infraction = new Infraction;
 	 // $infraction ->name  = $request->input('name infraction');
 	 //gak ada field name di table infractions kamu
-	$infraction ->name_infraction  = $request->input('name_infraction');
- 	$infraction ->point = $request->input('point');
- 	$infraction ->save();
+	$infraction -> name_infraction  = $request -> input('name_infraction');
+ 	$infraction -> point = $request -> input('point');
+ 	$infraction -> save();
  	return redirect('/infraction');
-
 	}
+
 
 	public function create()
 	{
 		return view('create-infraction');
 	}
 
+
 	public function store(Request $request)
 	{
-		$this->validate($request,[
-			'name_infraction' => 'required',
-			'point'			  => 'required',
-
+		//insert data ke table infraction
+			DB::table('infractions') ->insert([
+			'name_infraction' => $request -> input('name_infraction'),
+			'point'			  => $request -> input('point')
 		]);
 
-			DB::table('infractions')->insert([
-			'name_infraction' => $request ->input('name_infraction'),
-			'point'			  => $request ->input('point')
-		]);
+		return redirect('/infraction');		//mengalihkan ke halaman infraction
+	}
 
-		return redirect('/infraction');
+	public function edit($id)
+	{
+		$infraction = DB::table('infractions') -> where($id) -> get(); 	//mengambil data infraction berdasarkan id yang dipilih
+		return view('edit',['infraction' => $infraction]);			//passing data infraction yang didapat ke view edit-infraction.blade.php
+	}
+
+	public function update(Request $request)
+	{
+		DB::table('infractions') -> where('id',$request->id) -> update([
+			'name_infraction' => $request -> input('name_infraction'),
+			'point'			  => $request -> input('point')
+		]);	
+
+		return redirect('/infraction');	
 	}
    
+
+
 }

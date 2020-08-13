@@ -5,9 +5,9 @@
 </head>
 <body>
  
-	<h3>Data Pelanggaran</h3>
+	<h3>Edit Pelanggaran</h3>
  
-	<a href="/infraction/tambah"> + Tambah Pegawai Baru</a>
+	<a href="/infraction/update"> + Edit Pelanggaran Baru</a>
 	
 	
 	<br/>
