@@ -19,10 +19,19 @@ class StudentTableSeeder extends Seeder
         'class'     =>'12',
         'derection' =>'rpl', 
         'gender'    =>'ciwi',
-        'point'	    =>'12'
+        'point'	    =>'12',
+
+        'name'      =>'yulia',
+        'email'     =>'yulia@gmail.com',
+        'password'  =>Hash::make('12345678'),
+        'class'     =>'12',
+        'derection' =>'rpl', 
+        'gender'    =>'women',
+        'point'	    =>'0'
 
         ]);
-    	        
+
+     
     }    
 
 }

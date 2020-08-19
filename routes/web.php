@@ -38,3 +38,5 @@ Route::post('/infraction/store', 'Combinasi\InfractionController@store');
 Route::get('/infraction/edit/{id}', 'Combinasi\InfractionController@edit');
 Route::post('/infraction/update/{id}', 'Combinasi\InfractionController@update');
 Route::get('/infraction/hapus/{id}','Combinasi\InfractionController@hapus');
+
+Route::get('/admin', 'Combinasi\AdminController@index');
