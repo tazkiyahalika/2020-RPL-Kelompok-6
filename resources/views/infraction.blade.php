@@ -1,3 +1,7 @@
+@extends('layout.master')
+
+@section('content')
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +32,11 @@
 		</tr>
 		</table>
 	</form>
+@endsection
+
+@section('scripts')
+
+@endsection
 
 </body>
 </html>

@@ -13,7 +13,6 @@ class InfractionTableSeeder extends Seeder
     public function run()
     {
     	
-
     	DB::table('infractions')->insert([
         'name_infraction' =>'black socks', 
         'point'			  =>'10',

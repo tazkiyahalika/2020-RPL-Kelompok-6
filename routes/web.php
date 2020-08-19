@@ -14,10 +14,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 	return view('auth.login');
+	//return view('welcome');
    }); 
 
-Route::get('/kedua', function () {
-	return view('halaman1');
+Route::get('/logout', function () {
+	Auth::logout();
+
+	return redirect('/login');
+   }); 
+
+
+Route::get('/aha', function () {
+	return view('coba');
    });
 
 Auth::routes();
@@ -25,7 +33,7 @@ Auth::routes();
 Route::get('/home', 'Combinasi\HomeController@index')->name('home');
 Route::get('/infraction', 'Combinasi\InfractionController@index');
 Route::post('/infraction', 'Combinasi\InfractionController@save');
-Route::get('/infraction/add', 'Combinasi\InfractionController@create');
+Route::get('/infraction/add', 'Combinasi\InfractionController@add');
 Route::post('/infraction/store', 'Combinasi\InfractionController@store');
 Route::get('/infraction/edit/{id}', 'Combinasi\InfractionController@edit');
 Route::post('/infraction/update/{id}', 'Combinasi\InfractionController@update');

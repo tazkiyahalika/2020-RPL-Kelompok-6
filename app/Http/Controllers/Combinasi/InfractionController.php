@@ -18,7 +18,8 @@ class InfractionController extends Controller
     	//return view('infraction');
 
     	$infraction = DB::table('infractions')->get();		// mengambil data dari table infraction
-    	return view('index',['infraction' => $infraction]);	// mengirim data infraction ke view index
+    	return view('infraction.index-list',['infraction' => $infraction]);
+    		// mengirim data infraction ke view index
     }
 
 
@@ -34,9 +35,9 @@ class InfractionController extends Controller
 	}
 
 
-	public function create()
+	public function add()
 	{
-		return view('create-infraction');
+		return view('infraction.create-infraction');
 	}
 
 	public function store(Request $request)
@@ -53,7 +54,7 @@ class InfractionController extends Controller
 	public function edit($id)
 	{
 		$infraction = DB::table('infractions')-> where('id', $id) -> get(); 	//mengambil data infraction berdasarkan id yang dipilih
-		return view('edit-infraction',['infraction' => $infraction]);			//passing data infraction yang didapat ke view edit-infraction.blade.php
+		return view('infraction.edit-infraction',['infraction' => $infraction]);			//passing data infraction yang didapat ke view edit-infraction.blade.php
 		//return view('edit-infraction',{infraction/{$id}/edit});
 
 	}

@@ -14,10 +14,12 @@ class StudentTableSeeder extends Seeder
         
     	DB::table('students')->insert([
         'name'      =>'alika',
+        'email'     =>'alika@gmail.com',
+        'password'  =>Hash::make('12345678'),
         'class'     =>'12',
         'derection' =>'rpl', 
         'gender'    =>'ciwi',
-        'point'	    =>'12',
+        'point'	    =>'12'
 
         ]);
     	        
