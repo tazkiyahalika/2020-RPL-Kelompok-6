@@ -17,13 +17,17 @@ class CreateStudentsTable extends Migration
         //nama table itu harus PLURAL
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
-            $table->string('email');
-            $table->string('password');
             $table->string('class');
-            $table->string('derection');
+            $table->string('direction');
             $table->string('gender');
             $table->integer('point');
+            $table->string('email');
+            $table->string('password');
+          
+            
             $table->timestamps();
         });
     }

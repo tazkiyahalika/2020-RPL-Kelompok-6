@@ -22,6 +22,12 @@ class InfractionController extends Controller
     		// mengirim data infraction ke view index
     }
 
+     public function show($id)
+     {
+     	$infraction = infraction::find($id);
+     	return view('infraction.detail');
+     }
+
 
      public function save(Request $request)
     {
@@ -70,7 +76,7 @@ class InfractionController extends Controller
 	}
    
    // method untuk hapus data infraction
-	public function hapus($id)
+	public function delete($id)
 	{
 	// menghapus data infraction berdasarkan id yang dipilih
 	DB::table('infractions')->where('id',$id)->delete();

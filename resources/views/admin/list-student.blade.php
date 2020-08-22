@@ -17,7 +17,7 @@
                     <th>Email</th>
                     <th>Password</th>
                     <th>Class</th>
-                    <th>Derection</th>
+                    <th>Direction</th>
                     <th>Gender</th>
                     <th>Point</th>
                     <th>Action</th>
@@ -31,12 +31,12 @@
 			<td>{{ $student->email }}</td>
 			<td>{{ $student->password }}</td>
 			<td>{{ $student->class }}</td>
-			<td>{{ $student->derection }}</td>
+			<td>{{ $student->direction }}</td>
 			<td>{{ $student->gender }}</td>
 			<td>{{ $student->point }}</td>
 			<td>
 				<a href="/admin/edit/{{ $student->id }}" class="btn btn-primary">Edit</a>
-				<a href="/admin/hapus/{{ $student->id }}" class="btn btn-danger">Hapus</a>
+				<a href="/admin/hapus/{{ $student->id }}" class="btn btn-danger">Delete</a>
 			</td>
 		</tr>
 		@endforeach

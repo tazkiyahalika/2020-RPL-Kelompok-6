@@ -33,9 +33,9 @@
 			</tr>
 
 			<tr>
-				<td>Derection</td>
+				<td>Direction</td>
 				<td>:</td>
-				<td><input type="text" name="derection"></td>
+				<td><input type="text" name="direction"></td>
 
 			</tr>
 				<tr>

@@ -28,7 +28,8 @@
 			<td>{{ $i->point }}</td>
 			<td>
 				<a href="/infraction/edit/{{ $i->id }}" class="btn btn-primary">Edit</a>
-				<a href="/infraction/hapus/{{ $i->id }}" class="btn btn-danger">Hapus</a>
+				<a href="/infraction/hapus/{{ $i->id }}" class="btn btn-danger">Delete</a>
+				<a href="/infraction/{{ $i->id}}" class="btn btn-primary">Detail</a>
 			</td>
 		</tr>
 		@endforeach
