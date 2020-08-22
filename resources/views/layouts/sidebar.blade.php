@@ -20,21 +20,21 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Daftar Infraction
+                Beranda
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/infraction') }}" class="nav-link active">
+                <a href="{{ url('/infraction') }}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Detail Infraction</p>
+                  <p>List Infraction</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="{{ url('/admin') }}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Detail Student</p>
+                  <p>List Student</p>
                 </a>
               </li>
             </ul>

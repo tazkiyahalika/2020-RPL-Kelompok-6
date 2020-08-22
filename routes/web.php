@@ -40,3 +40,10 @@ Route::post('/infraction/update/{id}', 'Combinasi\InfractionController@update');
 Route::get('/infraction/hapus/{id}','Combinasi\InfractionController@hapus');
 
 Route::get('/admin', 'Combinasi\AdminController@index');
+Route::post('/admin', 'Combinasi\AdminController@save');
+Route::get('/admin/add', 'Combinasi\AdminController@add');
+Route::post('/admin/store', 'Combinasi\AdminController@store');
+Route::get('/admin/edit/{id}', 'Combinasi\AdminController@edit');
+Route::post('/admin/update/{id}', 'Combinasi\AdminController@update');
+Route::get('/admin/hapus/{id}','Combinasi\AdminController@hapus');
+

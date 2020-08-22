@@ -9,9 +9,9 @@
 	
 	<table style="height: 100px">
 
-	@foreach($admin as $a)
+	@foreach($student as $s)
 
-	<form action="/admin/update/{{$a->id}}" method="post">
+	<form action="/admin/update/{{$s->id}}" method="post">
 		{{ csrf_field() }}
 		
 			<tr>

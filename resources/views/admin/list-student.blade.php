@@ -24,19 +24,19 @@
                   </tr>
                   </thead>
                   <tbody>
-		@foreach($admin as $a)
+		@foreach($students as $student)
 		<tr>
-			<td>{{ $a->id }}</td>
-			<td>{{ $a->name }}</td>
-			<td>{{ $a->email }}</td>
-			<td>{{ $a->password }}</td>
-			<td>{{ $a->class }}</td>
-			<td>{{ $a->derection }}</td>
-			<td>{{ $a->gender }}</td>
-			<td>{{ $a->point }}</td>
+			<td>{{ $student->id }}</td>
+			<td>{{ $student->name }}</td>
+			<td>{{ $student->email }}</td>
+			<td>{{ $student->password }}</td>
+			<td>{{ $student->class }}</td>
+			<td>{{ $student->derection }}</td>
+			<td>{{ $student->gender }}</td>
+			<td>{{ $student->point }}</td>
 			<td>
-				<a href="/admin/edit/{{ $a->id }}" class="btn btn-primary">Edit</a>
-				<a href="/admin/hapus/{{ $a->id }}" class="btn btn-danger">Hapus</a>
+				<a href="/admin/edit/{{ $student->id }}" class="btn btn-primary">Edit</a>
+				<a href="/admin/hapus/{{ $student->id }}" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
