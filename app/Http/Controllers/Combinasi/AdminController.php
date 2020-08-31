@@ -7,30 +7,61 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 
 
 class AdminController extends Controller
 {
     public function index()
     {
-    	$students = DB::table('students')->get();		// mengambil data dari table student
+    	$students = DB::table('users')
+    	->where('role_id', '2')
+    	->get();		
     	return view('admin.list-student',['students' => $students]);
     		// mengirim data student ke view index
     }
 
-      public function save(Request $request)
+    public function addpoint()
     {
-	 	$student = new student;
-		$student -> name       = $request -> input('name');
-		$student -> email      = $request -> input('email');
-		$student -> password   = $request -> Hash::make('password');
-		$student -> class      = $request -> input('class');
-		$student -> derection  = $request -> input('derection');
-		$student -> gender     = $request -> input('gender');
- 		$student -> point      = $request -> input('point');
- 		$student -> save();
- 		return redirect('/student');
+    	$data= DB::table('users')
+    	->select('name')
+    	->where('role_id','2')
+    	->get();
+    	return view('admin.input-point',['data' => $data]);
+
+    }
+
+    public function hitung()
+	{
+
+		$p1 = DB::table('users')
+		->select('point')
+		->where('id')
+		->get();
+
+		$p2 = ($p1);
+		$p3 = ($p1 + $p2);
+
+		DB::table('users')->insert([
+			'point'    => $request -> input($p3)
+		]);
+
+
 	}
+
+ //      public function save(Request $request)
+ //    {
+	//  	$student = new User;
+	// 	$student -> name       = $request -> input('name');
+	// 	$student -> class      = $request -> input('class');
+	// 	$student -> direction  = $request -> input('direction');
+	// 	$student -> gender     = $request -> input('gender');
+ // 		$student -> point      = $request -> input('point');
+ // 		$student -> email      = $request -> input('email');
+	// 	$student -> password   = $request -> input('password');
+ // 		$student -> save();
+ // 		return redirect('/student');
+	// }
 
 
 	public function add()
@@ -41,14 +72,15 @@ class AdminController extends Controller
 	public function store(Request $request)
 	{
 		//insert data ke table infraction
-			DB::table('students')->insert([
+			DB::table('users')->insert([
+			'role_id' => 2,
 			'name'     => $request -> input('name'),
-			'email'    => $request -> input('email'),
-			'password' => $request -> Hash::make('password'),
 			'class'    => $request -> input('class'),
-			'derection'=> $request -> input('derection'),
+			'direction'=> $request -> input('direction'),
 			'gender'   => $request -> input('gender'),
-			'point'    => $request -> input('point')
+			'point'    => $request -> input('point'),
+			'email'    => $request -> input('email'),
+			'password' => bcrypt('12345678')
 		]);
 
 		return redirect('/admin');		
@@ -56,30 +88,31 @@ class AdminController extends Controller
 
 	public function edit($id)
 	{
-		$student = DB::table('students')-> where('id', $id) -> get();
+		$student = DB::table('users')-> where('id', $id) -> get();
 		return view('admin.update-student',['student' => $student]);			
 
 	}
 
 	public function update(Request $request)
 	{
-		DB::table('students')-> where('id',$request->id) -> update([
+		DB::table('users')-> where('id',$request->id) -> update([
 			'name'     => $request ->name,
-			'email'    => $request ->email,
-			'password' => $request ->password,
 			'class'    => $request ->class,
-			'derection'=> $request ->derection,
+			'direction'=> $request ->direction,
 			'gender'   => $request ->gender,
-			'point'    => $request ->point
+			'point'    => $request ->point,
+			'email'    => $request ->email,
+			'password' => bcrypt('12345678')
+
 		]);	
 
 		return redirect('/admin');	
 	}
    
-	public function hapus($id)
+	public function delete($id)
 	{
 
-	DB::table('students')->where('id',$id)->delete();
+	DB::table('users')->where('id',$id)->delete();
 	
 	return redirect('/admin');
 	}

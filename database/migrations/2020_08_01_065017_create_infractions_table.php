@@ -22,6 +22,7 @@ class CreateInfractionsTable extends Migration
             $table->string('name_infraction');
             $table->integer('point');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

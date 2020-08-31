@@ -6,7 +6,7 @@
           <img src="{{url('/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">six team</a>
+          <a href="#" class="d-block">Kelompok 6</a>
         </div>
       </div>
 
@@ -26,25 +26,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/infraction') }}" class="nav-link ">
-                  <i class="fa fa-fw fa-edit"></i>
-                  <p>List Infraction</p>
+                <a href="{{ url('/student') }}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List student</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="{{ url('/admin') }}" class="nav-link ">
-                  <i class="far fa-user"></i>
-                  <p>List Student</p>
+                <a href="{{ url('/student-detail') }}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Detail student</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ url('/admin/addpoint') }}" class="nav-link ">
-                  <i class="fa fa-fw fa-plus"></i>
-                  <p>add point</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+       
 
            <li>
             <a href="{{ url('/logout')}}" class="nav-link">

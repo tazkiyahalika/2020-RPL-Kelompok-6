@@ -4,14 +4,18 @@
 
 <div class="row">
 	<div class="col-md-12">
-	<h4>Daftar Infracttion</h4> 
+	 
 		<div class="box-body">
 
-		<a href="/infraction/add" class="btn btn-success">+  Add New Infraction
-		</a>
-
-
-                <table class="table table-bordered table-hover">
+		<div class="card">
+              <div class="card-header">
+              <center><h4>Daftar infraction</h4></center>
+                <h3 class="card-title"><a href="/infraction/add" class="btn btn-success">+  Add New Infraction
+		</a></h3>
+              </div>
+              <!-- /.card-header -->
+			  <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                   	<th>No</th>
@@ -28,8 +32,8 @@
 			<td>{{ $i->point }}</td>
 			<td>
 				<a href="/infraction/edit/{{ $i->id }}" class="btn btn-primary">Edit</a>
-				<a href="/infraction/hapus/{{ $i->id }}" class="btn btn-danger">Delete</a>
-				<a href="/infraction/{{ $i->id}}" class="btn btn-primary">Detail</a>
+				<a href="/infraction/delete/{{ $i->id }}" class="btn btn-danger">Delete</a>
+			
 			</td>
 		</tr>
 		@endforeach
@@ -37,9 +41,8 @@
         </table>
 
 
-              </div>
+             </div>
+             <!-- /.card-body -->
 		</div>
-	</div> 
-</div>
 
 @endsection

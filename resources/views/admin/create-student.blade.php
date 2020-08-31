@@ -1,63 +1,76 @@
+@extends('layouts.master')
+
+@section('content')
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add</title>
+	<title>update</title>
 </head>
 <body>
-	<center><h1>Add List Student</h1></center> 
-	<form action="/admin/store" method="post">
-		@csrf
-		<table style="height: 100px">
-			<tr>
-				<td>Name</td>
-				<td>:</td>
-				<td><input type="text" name="name"></td>
-			</tr>
-
-			<tr>
-				<td>Email</td>
-				<td>:</td>
-				<td><input type="text" name="email"></td>
-			</tr>
-
-			<tr>
-				<td>Password</td>
-				<td>:</td>
-				<td><input type="text" name="password"></td>
-			</tr>
-
-			<tr>
-				<td>Class</td>
-				<td>:</td>
-				<td><input type="text" name="class"></td>
-			</tr>
-
-			<tr>
-				<td>Direction</td>
-				<td>:</td>
-				<td><input type="text" name="direction"></td>
-
-			</tr>
-				<tr>
-				<td>Gender</td>
-				<td>:</td>
-				<td><input type="text" name="gender"></td>
-			</tr>
-
-			</tr>
-				<tr>
-				<td>Point</td>
-				<td>:</td>
-				<td><input type="text" name="point"></td>
-			</tr>
 	
-			<td>
-				<input type="submit" name="simpan">
-				<input type="reset" name="reset">
-			</td>
-		</tr>
-		</table>
-	</form>
+	
+	<table style="height: 100px">
+
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">           	
+                <a href="{{URL::to('/admin')}}" class="fa fa-arrow-left"></a>
+                <center><h3>Add Student Data</h3></center>
+              </div>
+              
+              <!-- /.card-header -->
+              <!-- form start -->
+
+
+
+              <form action="/admin/store/" method="post">
+              @csrf
+   
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">name</label>
+                    <input type="name" class="form-control" name="name" placeholder="name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">class</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="class" placeholder="class">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">direction</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="direction" placeholder="direction">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">gender</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" name="gender" placeholder="gender">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">point</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" name="point" placeholder="Point">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-primary">Reset</button>
+                </div>
+        
+              </form>
 
 </body>
+@endsection
+
+@section('scripts')
+@endsection
 </html>

@@ -22,12 +22,6 @@ class InfractionController extends Controller
     		// mengirim data infraction ke view index
     }
 
-     public function show($id)
-     {
-     	$infraction = infraction::find($id);
-     	return view('infraction.detail');
-     }
-
 
      public function save(Request $request)
     {

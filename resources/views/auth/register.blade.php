@@ -26,6 +26,31 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('class') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="class" type="text" class="form-control" name="class" required autocomplete="class">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="direction" class="col-md-4 col-form-label text-md-right">{{ __('direction') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="direction" type="text" class="form-control" name="direction" required autocomplete="direction">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('gender') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="gender" type="text" class="form-control" name="gender" required autocomplete="class">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -61,6 +86,7 @@
                             </div>
                         </div>
 
+                         
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

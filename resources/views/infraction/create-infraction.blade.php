@@ -1,34 +1,48 @@
+@extends('layouts.master')
+
+@section('content')
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Add</title>
 </head>
 <body>
-	<center><h1>Add Infraction Data</h1></center> 
-	<form action="/infraction/store" method="post">
-		@csrf
-		<table style="height: 100px">
-			<tr>
-				<td>Name infraction</td>
-				<td>:</td>
-				{{-- <td><input type="text" name="name infraction"></td> --}}
-				{{-- kasih name jangan pake spasi tapi pake underscore _ --}}
-				<td><input type="text" name="name_infraction"></td>
-			</tr>
-
-			<tr>
-			<td>point</td>
-			<td>:</td>
-			<td><input type="text" name="point"></td>
-		    </tr>
 	
-			<td>
-				<input type="submit" name="simpan">
-				<input type="reset" name="reset">
-			</td>
-		</tr>
-		</table>
-	</form>
+	<table style="height: 100px">
+
+		<div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">           	
+                <a href="{{URL::to('/infraction')}}" class="fa fa-arrow-left"></a>
+                <center><h3>Add Infraction Data</h3></center>
+              </div>
+
+		<form action="/infraction/store" method="post">
+		@csrf
+		
+			<div class="card-body">
+			<div class="form-group">
+	             <label for="exampleInputPassword1">Name Infraction</label>
+	             <input type="text" class="form-control" id="exampleInputPassword1" name="name_infraction" placeholder="name_infraction">
+	        </div>
+
+	        <div class="form-group">
+	             <label for="exampleInputPassword1">Point</label>
+	             <input type="text" class="form-control" id="exampleInputPassword1" name="point" placeholder="point">
+	        </div>
+	
+			<div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-danger">Reset</button>
+                </div>
+		</form>
 
 </body>
+
+@endsection
+
+@section('scripts')
+@endsection
 </html>

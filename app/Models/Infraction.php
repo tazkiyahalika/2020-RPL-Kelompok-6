@@ -3,11 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Infraction extends Model
 {
      // protected $table ='infraction';
      // gak perlu di define nama tablenya kalo sesuai singular dan pluralnya
-    	protected $guarded = [];
+
+		use SoftDeletes;
+
+		protected $dates = ['deleted_at'];
+    	protected $fillable = ['name_infraction','point','created_at','updated_at'];
+
     	
 }

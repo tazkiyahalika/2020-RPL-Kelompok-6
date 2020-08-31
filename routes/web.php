@@ -30,21 +30,30 @@ Route::get('/aha', function () {
 
 Auth::routes();
 
+			//infraction
 Route::get('/home', 'Combinasi\HomeController@index')->name('home');
 Route::get('/infraction', 'Combinasi\InfractionController@index');
-Route::get('/infraction/{id}', 'Combinasi\InfractionController@show');
-Route::post('/infraction', 'Combinasi\InfractionController@save');
+//Route::post('/infraction', 'Combinasi\InfractionController@save');
 Route::get('/infraction/add', 'Combinasi\InfractionController@add');
 Route::post('/infraction/store', 'Combinasi\InfractionController@store');
 Route::get('/infraction/edit/{id}', 'Combinasi\InfractionController@edit');
 Route::post('/infraction/update/{id}', 'Combinasi\InfractionController@update');
 Route::get('/infraction/delete/{id}','Combinasi\InfractionController@delete');
 
+
+				//Admin
 Route::get('/admin', 'Combinasi\AdminController@index');
-Route::post('/admin', 'Combinasi\AdminController@save');
+Route::get('/admin/addpoint', 'Combinasi\AdminController@addpoint');
 Route::get('/admin/add', 'Combinasi\AdminController@add');
 Route::post('/admin/store', 'Combinasi\AdminController@store');
 Route::get('/admin/edit/{id}', 'Combinasi\AdminController@edit');
 Route::post('/admin/update/{id}', 'Combinasi\AdminController@update');
 Route::get('/admin/delete/{id}','Combinasi\AdminController@delete');
+Route::post('/admin/hitung','Combinasi\AdminController@hitung');
+
+
+
+		//student
+Route::get('/student', 'Combinasi\StudentController@index');
+Route::get('/student-detail', 'Combinasi\StudentController@detail');
 
