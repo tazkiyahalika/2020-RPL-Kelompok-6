@@ -25,15 +25,21 @@
 		@csrf
 		
 			<div class="card-body">
+      <div class="form-group">
+                    <label for="code">Kode Pelanggaran</label>
+                    <input type="text" class="form-control" id="code" name="code" placeholder="name_infraction" value="{{$i->code}}" readonly="">
+      </div>
+
 			<div class="form-group">
 	             <label for="exampleInputPassword1">Name Infraction</label>
 	             <input type="text" class="form-control" id="exampleInputPassword1" name="name_infraction" placeholder="name_infraction" value="{{$i->name_infraction}}">
 	        </div>
 
 	        <div class="form-group">
-	             <label for="exampleInputPassword1">Point</label>
-	             <input type="text" class="form-control" id="exampleInputPassword1" name="point" placeholder="point" value="{{$i->point}}">
-	        </div>
+                    <label for="exampleInputPoint">Point</label>
+                    <input type="text" class="form-control" id="exampleInputPoint" name="point" placeholder="point" value="{{$i->point}}">
+                          
+                  </div>
 	
 			<div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>

@@ -16,7 +16,7 @@ class InfractionTableSeeder extends Seeder
     	DB::table('infractions')->insert([
         'name_infraction' =>'black socks', 
         'point'			  =>'10',
-
+        'code'            =>'A1'
         ]);
     	        
     }

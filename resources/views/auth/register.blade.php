@@ -29,17 +29,34 @@
                             <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('class') }}</label>
 
                             <div class="col-md-6">
-                                <input id="class" type="text" class="form-control" name="class" required autocomplete="class">
+                                <select id="class" type="text" name="class" required autocomplete="class" class="form-control">
+                                      <option>--pilih--</option>
+                                      <option>X</option>
+                                      <option>XI</option>
+                                      <option>XII</option>
+                                </select>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="direction" class="col-md-4 col-form-label text-md-right">{{ __('direction') }}</label>
+
+                 <div class="form-group row">
+                            <label for="class" class="col-md-4 col-form-label text-md-right">{{ __('direction') }}</label>
 
                             <div class="col-md-6">
-                                <input id="direction" type="text" class="form-control" name="direction" required autocomplete="direction">
+                                <select id="direction" type="text" name="direction" required autocomplete="class" class="form-control">
+                                      <option>--pilih--</option>
+                                      <option>Multimedia</option>
+                                      <option>Multimedia 1</option>
+                                      <option>Multimedia 2</option>
+                                      <option>Rekayasa Perangkat Lunak</option>
+                                      <option>Rekayasa Perangkat Lunak 1</option>
+                                      <option>Rekayasa Perangkat Lunak 2</option>
+                                      
+                                 </select>
                             </div>
-                        </div>
+                </div>
+
+                       
 
                         <div class="form-group row">
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('gender') }}</label>

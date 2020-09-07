@@ -21,6 +21,7 @@ class CreateInfractionsTable extends Migration
             // kamu ngikutin tutorialnya siapa? kenapa  bikin nama fieldnya pake spasi?
             $table->string('name_infraction');
             $table->integer('point');
+            $table->string('code');
             $table->timestamps();
             $table->softDeletes();
         });

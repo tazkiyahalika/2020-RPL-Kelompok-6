@@ -23,29 +23,96 @@ class InfractionController extends Controller
     }
 
 
-     public function save(Request $request)
-    {
-	 $infraction = new Infraction;
+     //public function save(Request $request)
+   // {
+	 //$infraction = new Infraction;
 	 // $infraction ->name  = $request->input('name infraction');
 	 //gak ada field name di table infractions kamu
-	$infraction -> name_infraction  = $request -> input('name_infraction');
- 	$infraction -> point = $request -> input('point');
- 	$infraction -> save();
- 	return redirect('/infraction');
-	}
+	//$infraction -> name_infraction  = $request -> input('name_infraction');
+ 	//$infraction -> point = $request -> input('point');
+ 	//$infraction -> save();
+ 	//return redirect('/infraction');
+	//}
 
 
 	public function add()
 	{
-		return view('infraction.create-infraction');
+		$datap= DB::table('infractions')
+    	->select('name_infraction','code')
+    	->get();
+    	
+    	return view('infraction.create-infraction',['datap' => $datap]);
+	}
+
+	public function AddCode()
+	{
+		$datap= DB::table('infractions')
+    	->select('name_infraction','code')
+    	->get();
+    	
+    	return view('infraction.add_code',['datap' => $datap]);
+	}
+
+	public function StoreCode(Request $request)
+	{
+		//insert data ke table infraction
+
+			DB::table('infractions')->insert([
+
+			'code'			  => $request -> input('code'),
+			'name_infraction' => 'null',
+			'point'			  => $request -> input('point') 
+		]);
+
+		return redirect('/infraction');	
 	}
 
 	public function store(Request $request)
 	{
 		//insert data ke table infraction
+			$code = $request -> input('code');
+
+			if ($code == 'A1')
+			{
+				$point = 2;
+			}
+			elseif ($code == 'A2')
+			{
+				$point = 3;
+			}
+			elseif ($code == 'A3')
+			{
+				$point = 5;
+			}
+			elseif ($code == 'A4')
+			{
+				$point = 10;
+			}
+			elseif ($code == 'A5')
+			{
+				$point = 20;
+			}
+			elseif ($code == 'A6')
+			{
+				$point = 40;
+			}
+			elseif ($code == 'A7')
+			{
+				$point = 50;
+			}
+			elseif ($code == 'A8')
+			{
+				$point = 60;
+			}
+			elseif ($code == 'A9')
+			{
+				$point = 100;
+			}
+
 			DB::table('infractions')->insert([
 			'name_infraction' => $request -> input('name_infraction'),
-			'point'			  => $request -> input('point')
+			'code'			  => $code,
+			'point'			  => $point 
 		]);
 
 		return redirect('/infraction');		//mengalihkan ke halaman infraction

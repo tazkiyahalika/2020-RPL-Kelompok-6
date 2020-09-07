@@ -35,6 +35,8 @@ Route::get('/home', 'Combinasi\HomeController@index')->name('home');
 Route::get('/infraction', 'Combinasi\InfractionController@index');
 //Route::post('/infraction', 'Combinasi\InfractionController@save');
 Route::get('/infraction/add', 'Combinasi\InfractionController@add');
+Route::get('/infraction/add-code', 'Combinasi\InfractionController@AddCode');
+Route::post('/infraction/StoreCode', 'Combinasi\InfractionController@StoreCode');
 Route::post('/infraction/store', 'Combinasi\InfractionController@store');
 Route::get('/infraction/edit/{id}', 'Combinasi\InfractionController@edit');
 Route::post('/infraction/update/{id}', 'Combinasi\InfractionController@update');
@@ -50,10 +52,18 @@ Route::get('/admin/edit/{id}', 'Combinasi\AdminController@edit');
 Route::post('/admin/update/{id}', 'Combinasi\AdminController@update');
 Route::get('/admin/delete/{id}','Combinasi\AdminController@delete');
 Route::post('/admin/hitung','Combinasi\AdminController@hitung');
-
+// Route::get('/admin/hitung', 'AdminController@hitung')->name('point.save');
 
 
 		//student
 Route::get('/student', 'Combinasi\StudentController@index');
 Route::get('/student-detail', 'Combinasi\StudentController@detail');
+
+	//Class
+Route::get('/class', 'ClassController@index');
+Route::get('/class/add','ClassController@add');
+Route::post('/class/store', 'ClassController@store');
+Route::get('/class/edit/{id}','ClassController@edit');
+Route::post('/class/update/{id}','ClassController@update');
+Route::get('/class/delete/{id}','ClassController@delete');
 

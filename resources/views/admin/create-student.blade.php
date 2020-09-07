@@ -30,32 +30,41 @@
    
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">name</label>
+                    <label for="exampleInpuName">name</label>
                     <input type="name" class="form-control" name="name" placeholder="name">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputPassword1">class</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="class" placeholder="class">
+                    <label for="exampleInputClass">Class</label>
+                    <select type="text" class="form-control" id="exampleInputClass" name="class" placeholder="class">
+                                  <option>--pilih--</option>
+                                      <option>X</option>
+                                      <option>XI</option>
+                                      <option>XII</option>
+                    </select>
+                 </div>
+                  
+
+                  <div class="form-group">
+                    <label for="exampleInputDirection">Direction</label>
+                    <select type="text" class="form-control" id="exampleInputDirection" name="direction" placeholder="Direction">
+                                      <option>--pilih--</option>
+                                      <option>Multimedia</option>
+                                      <option>Multimedia 1</option>
+                                      <option>Multimedia 2</option>
+                                      <option>Rekayasa Perangkat Lunak</option>
+                                      <option>Rekayasa Perangkat Lunak 1</option>
+                                      <option>Rekayasa Perangkat Lunak 2</option>
+                    </select>
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputPassword1">direction</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="direction" placeholder="direction">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">gender</label>
+                    <label for="exampleInputGender">gender</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" name="gender" placeholder="gender">
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputPassword1">point</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" name="point" placeholder="Point">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">email</label>
+                    <label for="exampleInputEmail">email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email">
                   </div>
                 </div>

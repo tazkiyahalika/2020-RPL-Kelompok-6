@@ -28,13 +28,19 @@
               <li class="nav-item">
                 <a href="{{ url('/infraction') }}" class="nav-link ">
                   <i class="fa fa-fw fa-edit"></i>
-                  <p>List Infraction</p>
+                  <p>Manage Infraction Data</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('/admin') }}" class="nav-link ">
                   <i class="far fa-user"></i>
-                  <p>List Student</p>
+                  <p>Manage Student Data</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/class') }}" class="nav-link ">
+                  <i class="far fa-user"></i>
+                  <p>Manage Class Data</p>
                 </a>
               </li>
               <li class="nav-item">

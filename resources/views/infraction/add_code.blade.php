@@ -19,22 +19,19 @@
                 <center><h3>Add Infraction Data</h3></center>
               </div>
 
-		<form action="/infraction/store" method="post">
+		<form action="/infraction/StoreCode" method="post">
 		@csrf
 		
 			<div class="card-body">
       <div class="form-group">
-                    <label for="code">Kode Pelanggaran</label>
-                    <select type="text" class="form-control" id="code" name="code" placeholder="code">
-                          @foreach ($datap as $data)
-                    <option value="{{ $data->code }}"> {{ $data->code }}</option>
-                    @endforeach            
-                    </select>
+                <label for="code">Kode Pelanggaran</label>
+               <input type="text" class="form-control" id="exampleInputPassword1" name="code" placeholder="code">
+                    
           </div>
   
 			<div class="form-group">
-	             <label for="exampleInputPassword1">Name_Infraction</label>
-	             <input type="text" class="form-control" id="exampleInputPassword1" name="name_infraction" placeholder="name_infraction">
+	             <label for="exampleInputPassword1">Point</label>
+	             <input type="text" class="form-control" id="exampleInputPassword1" name="point" placeholder="point">
 	   </div>
 
 	         

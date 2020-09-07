@@ -23,6 +23,8 @@
 </div> 
 
 @yield('content')
+
+
 </section> 
 </div>
 </div>
