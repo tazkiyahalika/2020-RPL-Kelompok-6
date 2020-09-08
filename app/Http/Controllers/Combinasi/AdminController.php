@@ -8,30 +8,31 @@ use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Infraction;
+use App\Models\User;
 
 class AdminController extends Controller
 {
     public function index()
     {
-    	$students = DB::table('users')
-    	->where('role_id', '2')
+    	$students = User::
+    	where('role_id', '2')
     	->get();		
     	return view('admin.list-student',['students' => $students]);
     		// mengirim data student ke view index
     }
 
+
     public function addpoint()
     {
 
-    	$data= DB::table('users')
-    	->select('id','name')
-    	->where('role_id','2')
+    	$data= User::where('role_id','2')
+    	->select('users.id','users.name')
     	->get();
 
-    	$datap= DB::table('infractions')
-    	->select('name_infraction','code')
-    	->get();
+    	$datap= Infraction::all();
+    	
     	
     	return view('admin.input-point',['data' => $data],['datap' => $datap]);
 
@@ -43,103 +44,10 @@ class AdminController extends Controller
 
     public function hitung(Request $request)
 	{
-		$name = $request -> input('name');
-		$code = $request -> input('code');
-
-		$id = DB::table('users')
-    	->select('id')
-    	->where('name',$name)
-    	->get();
-
-    	$class = DB::table('users')
-    	->select('class')
-    	->where('name',$name)
-    	->first();
-
-    	$direction = DB::table('users')
-    	->select('direction')
-    	->where('name',$name)
-    	->first();
-
-    	$gender = DB::table('users')
-    	->select('gender')
-    	->where('name',$name)
-    	->first();
-
- 		// $point1 = DB::table('users')->where('id', $id)->pluck('point');
-
-    	$point1 = DB::table('users')
-    	->select('point')
-    	->where('name',$name)
-    	->get()->toArray();
-
-    	$email = DB::table('users')
-    	->select('email')
-    	->where('name',$name)
-    	->first();
-
-    	$password = DB::table('users')
-    	->select('password')
-    	->where('name',$name)
-    	->first();
-
-		if ($code == 'A1')
-		{
-			$point2 = 2;
-		}
-		elseif ($code == 'A2')
-		{
-			$point2 = 3;
-		}
-		elseif ($code == 'A3')
-		{
-			$point2 = 5;
-		}
-		elseif ($code == 'A4')
-		{
-			$point2 = 10;
-		}
-		elseif ($code == 'A5')
-		{
-			$point2 = 20;
-		}
-		elseif ($code == 'A6')
-		{
-			$point2 = 40;
-		}
-		elseif ($code == 'A7')
-		{
-			$point2 = 50;
-		}
-		elseif ($code == 'A8')
-		{
-			$point2 = 60;
-		}
-		elseif ($code == 'A9')
-		{
-			$point2 = 100;
-		}
-
-		$point = $point1[$name] + $point2;
-		die(var_dump($point));
-
-		// $point = $this->plus($point1,$point2);
-
-		
-		// $point = count($point1,$point2);
-		DB::table('users')-> where('id',$request->id) -> update([
-			'id' => $request -> input('id'),	
-			'role_id' => 2,
-			'name'     => $name,
-			'class'    => $class,
-			'direction'=> $direction,
-			'gender'   => $gender,
-			'point'	=> $point,
-			'email'    => $email,
-			'password' => $password
-			]);
-
-		return redirect('/admin');		
+		$update_user = User::whereId($request->input('id_user'))->first();
+		$update_user->point += $request->input('point');
+		$update_user->save();
+		return redirect('/admin');
 
 	}
 
@@ -206,9 +114,12 @@ class AdminController extends Controller
 	public function delete($id)
 	{
 
-	DB::table('users')->where('id',$id)->delete();
+		User::where('id',$id)->delete();
+		return redirect('/admin');
+
+	//DB::table('users')->where('id',$id)->delete();
 	
-	return redirect('/admin');
+	//return redirect('/admin');
 	}
 
 }

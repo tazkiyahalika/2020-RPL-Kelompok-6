@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Combinasi;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-// use App\infraction;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Infraction;
+
 //Nama Model Kamu Infraction bukan infraction
 // Nama file Controller kamu Typo, sudah saya betulkan
 
@@ -17,7 +19,7 @@ class InfractionController extends Controller
        // $infraction = DB::table('infractions')->get();
     	//return view('infraction');
 
-    	$infraction = DB::table('infractions')->get();		// mengambil data dari table infraction
+    	$infraction = Infraction::all();		// mengambil data dari table infraction
     	return view('infraction.index-list',['infraction' => $infraction]);
     		// mengirim data infraction ke view index
     }
@@ -140,7 +142,7 @@ class InfractionController extends Controller
 	public function delete($id)
 	{
 	// menghapus data infraction berdasarkan id yang dipilih
-	DB::table('infractions')->where('id',$id)->delete();
+	Infraction::where('id',$id)->delete();
 		
 	// alihkan halaman ke halaman infraction
 	return redirect('/infraction');

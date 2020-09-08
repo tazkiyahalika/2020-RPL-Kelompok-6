@@ -11,8 +11,9 @@
               <div class="card-header">
               <center><h4>Daftar infraction</h4></center>
                 <h3 class="card-title"><a href="/infraction/add" class="btn btn-success">+  Add New Infraction
-		</a></h3> 
-		<h3 class="card-title padding-right"><a href="/infraction/add-code" class="btn btn-success">+  Add New Code
+		</a></h3>
+		 &nbsp
+		<h3 class="card-title padding-right"><a href="/infraction/add-code" class="btn btn-warning">+  Add New Code
 		</a></h3>
               </div>
               <!-- /.card-header -->

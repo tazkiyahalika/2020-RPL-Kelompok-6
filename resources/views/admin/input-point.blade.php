@@ -30,29 +30,20 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">name</label>
-                    <select class="form-control input-sm" name="name" id="name">
+                    <select class="form-control input-sm" name="id_user" id="name">
                     @foreach ($data as $data)
 
-                    <option value="{{ $data->name }}"> {{ $data->name }}</option>
+                    <option value="{{ $data->id }}"> {{ $data->name }}</option>
                     
                     @endforeach
                     </select>
                   </div>
 
-                  <div class="form-group">
-                    <label for="code">Kode Pelanggaran</label>
-                    <select type="text" class="form-control" id="code" name="code" placeholder="code">
-                    @foreach ($datap as $data)
-                    <option value="{{ $data->code }}" > {{ $data->code }}</option>
-                    @endforeach            
-                    </select>
-                  </div>
-
                    <div class="form-group">
                     <label for="name_infraction">Nama Pelanggaran</label>
-                    <select type="text" class="form-control" id="name_infraction" name="name_infraction" placeholder="name_infraction">
+                    <select type="text" class="form-control" id="name_infraction" name="point" placeholder="name_infraction">
                     @foreach ($datap as $data)
-                    <option value="{{ $data->name_infraction }}"> {{ $data->name_infraction }}</option>
+                    <option value="{{ $data->point }}"> {{ $data->name_infraction }}</option>
                     @endforeach            
                     </select>
                     </div>

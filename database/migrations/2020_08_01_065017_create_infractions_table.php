@@ -23,7 +23,7 @@ class CreateInfractionsTable extends Migration
             $table->integer('point');
             $table->string('code');
             $table->timestamps();
-            $table->softDeletes();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateClassesTable extends Migration
             $table->string('name_class');
             $table->string('direction');
             $table->timestamps();
+            $table->timestamp('deleted_at');
         });
     }
 

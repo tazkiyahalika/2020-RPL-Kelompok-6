@@ -60,7 +60,11 @@
 
                   <div class="form-group">
                     <label for="exampleInputGender">gender</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="gender" placeholder="gender">
+                    <select type="text" class="form-control" id="exampleInputPassword1" name="gender" placeholder="gender">
+                      <option>--pilih--</option>
+                      <option>Laki - Laki</option>
+                      <option>Perempuan</option>
+                      </select>
                   </div>
 
                   <div class="form-group">

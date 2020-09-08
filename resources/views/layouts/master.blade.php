@@ -9,7 +9,7 @@
 <header class="main-header">
   @include('layouts.header')
 </header>
-<aside class="main-sidebar">
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
   @include('layouts.sidebar')
 </aside>
 

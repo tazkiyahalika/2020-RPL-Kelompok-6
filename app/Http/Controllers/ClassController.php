@@ -54,7 +54,7 @@ class ClassController extends Controller
 	}
 	public function delete($id)
 	{
-
+		
 	DB::table('classes')->where('id',$id)->delete();
 	return redirect('/class');
 	}
